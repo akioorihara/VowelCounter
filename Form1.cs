@@ -40,19 +40,25 @@ namespace VowelCounter
 
             }
             if (count_v > 0)
-                MessageBox.Show("You entered : " + words + "\n" + "Your total vowel is " + count_v);
-            if (count_y > 0)
-                MessageBox.Show("Y found found : " + count_y);
+            {
+                if (checkBox1.Checked)
+                {
+                    if (count_y >0)
+                        MessageBox.Show("You entered : " + words + "\n" + "Your total vowel is " + count_v + "\n" + "Y vewels are found : " + count_y + "times");
+                    else
+                        MessageBox.Show("You entered : " + words + "\n" + "Your total vowel is " + count_v + "\n" + "Y vewels are not found.");
+                }
+                else
+                    MessageBox.Show("You entered : " + words + "\n" + "Your total vowel is " + count_v);
+            }
             else
             {
-                MessageBox.Show("No Vowels Found");
+                if(checkBox1.Checked)
+                    MessageBox.Show("No Vowels Found but Y was found " + count_y + " time(s)");
+                else 
+                    MessageBox.Show("No Vowels Found");
             }
 
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
 
         }
     }
